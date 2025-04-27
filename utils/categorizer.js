@@ -1,3 +1,7 @@
+
+import LearnedKeyword from "../models/LearnedKeyword.js";
+
+
 export const autoCategorize = async ({ description, userId }) => {
   const keyword = description.toLowerCase();
 

@@ -27,7 +27,7 @@ export const createTransaction = async (req, res, next) => {
     
 
     // Step 2: Auto-categorize transaction
-    const category = autoCategorize({ description });
+    const category = await autoCategorize({ description });
 
     // Step 3: Save transaction
     const transaction = await Transaction.create({
@@ -61,6 +61,7 @@ export const createTransaction = async (req, res, next) => {
     next(err); // Pass any errors to your error handler
   }
 };
+
 
 
 export const confirmCategory = async (req, res, next) => {
